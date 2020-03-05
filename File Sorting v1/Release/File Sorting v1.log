@@ -1,31 +1,23 @@
-﻿Build started 8/3/2017 3:02:58 PM.
-     1>Project "C:\Users\monua\Desktop\file sorting\File Sorting v3.2\File Sorting v1\File Sorting v1.vcxproj" on node 2 (build target(s)).
+﻿Build started 01-08-2017 PM 10:46:10.
+     1>Project "c:\Users\abhay server\documents\visual studio 2010\Projects\File Sorting v1\File Sorting v1\File Sorting v1.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating "Release\File Sorting v3.2.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching "Release\File Sorting v1.unsuccessfulbuild".
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt "Main Code.cpp"
          Main Code.cpp
-     1>Main Code.cpp(56): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\conio.h(128) : see declaration of 'getch'
-     1>Main Code.cpp(211): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>Main Code.cpp(40): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
-     1>Main Code.cpp(215): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(253) : see declaration of 'fscanf'
-     1>Main Code.cpp(210): warning C4101: 'j' : unreferenced local variable
-     1>Main Code.cpp(237): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>Main Code.cpp(43): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\monua\Desktop\file sorting\File Sorting v3.2\Release\File Sorting v3.2.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\File Sorting v3.2.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\monua\Desktop\file sorting\File Sorting v3.2\Release\File Sorting v3.2.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\monua\Desktop\file sorting\File Sorting v3.2\Release\File Sorting v3.2.lib" /MACHINE:X86 "Release\Main Code.obj"
-         Generating code
-         Finished generating code
-         File Sorting v1.vcxproj -> C:\Users\monua\Desktop\file sorting\File Sorting v3.2\Release\File Sorting v3.2.exe
-       Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\monua\Desktop\file sorting\File Sorting v3.2\Release\File Sorting v3.2.exe;#1" /manifest "Release\File Sorting v3.2.exe.intermediate.manifest"
-       FinalizeBuildStatus:
-         Deleting file "Release\File Sorting v3.2.unsuccessfulbuild".
-         Touching "Release\File Sorting v3.2.lastbuildstate".
-     1>Done Building Project "C:\Users\monua\Desktop\file sorting\File Sorting v3.2\File Sorting v1\File Sorting v1.vcxproj" (build target(s)).
+     1>Main Code.cpp(71): warning C4996: 'getche': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getche. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\conio.h(129) : see declaration of 'getche'
+     1>Main Code.cpp(153): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>Main Code.cpp(167): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>Main Code.cpp(184): error C3861: 'em': identifier not found
+     1>Done Building Project "c:\Users\abhay server\documents\visual studio 2010\Projects\File Sorting v1\File Sorting v1\File Sorting v1.vcxproj" (build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:01.77
+Time Elapsed 00:00:01.00

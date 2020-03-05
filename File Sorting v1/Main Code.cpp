@@ -14,7 +14,7 @@ float data[255][5],buffer_y[255][5];
 float CX[2],CY[2];
 char str2[255][20];
 
-int maxrow = 0;
+int maxrow = 4;
 
 //======================[[-- VARIABLES ANNOTATION  --[[===================//
 //	str2 is used to store the label in 1st column
@@ -30,7 +30,6 @@ void swap(float &, float &);
 void calc_x(int);
 void compute(int);
 void write_file();
-void count_lines();
 
 //======================[[-- MAIN FUNC  --[[===================//
 // read_file() - reads the text file and init data and buffers
@@ -43,15 +42,17 @@ void main()
 {
 	
 	printf("Loading file.");
-	count_lines();
 	read_file();
 
-	for(int k=0;k<(maxrow-1);k++)
-	{
-	compute(k);
+	compute(0);
+	//printf("Display Array.\n");
+	//display_array();
+	//compute(1);
+	//printf("Display Array.\n");
+	//display_array();
+	//compute(2);
 	printf("Display Array.\n");
 	display_array();
-	}
 	write_file();
 	getch();
 
@@ -65,8 +66,7 @@ void main()
 //===============================================================//
 void calc_x(int index)
 {
-	cout<<"buffer[index][1]="<<buffer[index][1]<<" buffer[index][2]="<<buffer[index][2]<<endl;
-	cout<<"buffer[index+1][1]="<<buffer[index+1][1]<<" buffer[index+1][2]="<<buffer[index+1][2]<<endl;
+	
 	CX[0] = buffer[index][1]+buffer[index+1][1];
 	CX[1] = min(buffer[index][2],buffer[index+1][2]);
 	cout<<"CX[0]="<<CX[0]<<"CX[1]="<<CX[1]<<endl;
@@ -82,8 +82,6 @@ void calc_x(int index)
 
 void calc_y(int index)
 {
-	cout<<"buffer_y[index][1]="<<buffer_y[index][1]<<" buffer_y[index][2]="<<buffer_y[index][2]<<endl;
-	cout<<"buffer_y[index+1][1]="<<buffer_y[index+1][1]<<" buffer_y[index+1][2]="<<buffer_y[index+1][2]<<endl;
 	CY[0] = min(buffer_y[index][1],buffer_y[index+1][1]);
 	CY[1] = buffer_y[index][2]+buffer_y[index+1][2];
 	cout<<"CY[0]="<<CY[0]<<"CY[1]="<<CY[1]<<endl;
@@ -91,13 +89,8 @@ void calc_y(int index)
 }
 void compute(int i)
 {	
-	float CCX[2];
-	float CCY[2];
-	calc_x(i);
-	CCX[0] = CX[0];
-	CCX[1] = CX[1];
 	
-
+	calc_x(i);
 	if(CX[0]>CX[1])
 	{
 		cout<<"B[0][1]="<<buffer[i][1]<<"B[0][2]="<<buffer[i][2];
@@ -112,25 +105,8 @@ void compute(int i)
 		cout<<"B[i+1][1]="<<buffer[i+1][1]<<"B[i+1][2]="<<buffer[i+1][2]<<endl;
 		calc_x(i);
 	}
-	if((CCX[0]*CCX[1])<=(CX[0]*CX[1]))
-	{
-		if(CCX[0]>CCX[1])
-		{
-			cout<<"Swapped [i] rows"<<endl;
-			swap(buffer[i][1],buffer[i][2]);
-			calc_x(i);
-		}
-		else 
-		{
-			cout<<"Swapped [i+1] rows"<<endl;
-			swap(buffer[i+1][1],buffer[i+1][2]);
-			calc_x(i);
-		}
 
-	}
 	calc_y(i);
-	CCY[0] = CY[0];
-	CCY[1] = CY[1];
 
 	if(CY[0]>CY[1])
 	{
@@ -146,26 +122,6 @@ void compute(int i)
 		cout<<"BY[i+1][1]="<<buffer_y[i+1][1]<<"BY[i+1][2]="<<buffer_y[i+1][2]<<endl;
 		calc_y(i);
 	}
-	if((CCY[0]*CCY[1])<=(CY[0]*CY[1]))
-	{
-		if(CCY[0]>CCY[1])
-		{
-			cout<<"Swapped [i] rows"<<endl;
-			swap(buffer_y[i][1],buffer_y[i][2]);
-			calc_y(i);
-		}
-		else 
-		{
-			cout<<"Swapped [i+1] rows"<<endl;
-			swap(buffer_y[i+1][1],buffer_y[i+1][2]);
-			calc_y(i);
-		}
-
-	}
-
-
-
-
 	if((CX[0]*CX[1])<(CY[0]*CY[0]))
 	{
 		data[i][1] = buffer[i][1];
@@ -197,14 +153,6 @@ void compute(int i)
 	
 }
 
-void count_lines()
-{
-	string line;
-	ifstream file("Test.txt");
-    while (getline(file, line))
-    maxrow++;
-	file.close();
-}
 void read_file()
 {
 	int i,j;
@@ -257,7 +205,8 @@ void display_array()
 	{
 		for(j=1;j<4;j++)
 		{
-			printf("%f ",data[i][j]);
+			printf("%f ",buffer[i][j]);
+			
 		}
 		printf("\n");
 	}
